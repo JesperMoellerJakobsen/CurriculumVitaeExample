@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GraphQL" Version="0.17.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CurriculumVitae.Database\CurriculumVitae.Database.csproj" />
+    <ProjectReference Include="..\CurriculumVitae.DomainModels\CurriculumVitae.DomainModels.csproj" />
+  </ItemGroup>
+
+</Project>
