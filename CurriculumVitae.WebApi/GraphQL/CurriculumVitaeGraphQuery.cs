@@ -7,6 +7,7 @@ namespace CurriculumVitae.WebApi.GraphQL
 {
     public class CurriculumVitaeGraphQuery : ObjectGraphType
     {
+        //Arguments not used since im not querying any database.
         public CurriculumVitaeGraphQuery(ICurriculumVitaeDatabaseContext dbContext)
         {
             Field<DetailedUserGraphType>(
@@ -38,7 +39,7 @@ namespace CurriculumVitae.WebApi.GraphQL
             );
 
             Field<CompanyGraphType>(
-                "workexperience",
+                "company",
                 arguments: new QueryArguments(new QueryArgument<IdGraphType> { Name = "Id", Description = "Id of the user queried" }),
                 resolve: context => dbContext.Companies()
             );
