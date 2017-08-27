@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurriculumVitae.WebApi", "C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurriculumVitae.Database", "CurriculumVitae.Database\CurriculumVitae.Database.csproj", "{75EA0D29-8F9E-4E2F-B74F-6170768FFD93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurriculumVitae.GraphModels", "CurriculumVitae.GraphModels\CurriculumVitae.GraphModels.csproj", "{06BAF361-E2D0-4ECC-A897-D66D6879B3A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurriculumVitae.GraphModels", "CurriculumVitae.GraphModels\CurriculumVitae.GraphModels.csproj", "{06BAF361-E2D0-4ECC-A897-D66D6879B3A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurriculumVitae.Test", "CurriculumVitae.Tests\CurriculumVitae.Test.csproj", "{35C72D5F-1A59-4F94-9D93-F7FC2E81A67D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{06BAF361-E2D0-4ECC-A897-D66D6879B3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06BAF361-E2D0-4ECC-A897-D66D6879B3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06BAF361-E2D0-4ECC-A897-D66D6879B3A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C72D5F-1A59-4F94-9D93-F7FC2E81A67D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C72D5F-1A59-4F94-9D93-F7FC2E81A67D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C72D5F-1A59-4F94-9D93-F7FC2E81A67D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C72D5F-1A59-4F94-9D93-F7FC2E81A67D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

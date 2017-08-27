@@ -3,11 +3,10 @@ using GraphQL.Types;
 
 namespace CurriculumVitae.GraphModels.Specifications
 {
-    public class WorkExperienceGraphType : ObjectGraphType<WorkExperience>
+    public class CompanyGraphType : ObjectGraphType<Company>
     {
-        public WorkExperienceGraphType()
+        public CompanyGraphType()
         {
-            Field(x => x.BelongsTo, type: typeof(IdGraphType)).Description("The user which the work experience belongs to.");
             Field(x => x.CompanyName).Description("The name of the company, which gave the experience.");
             Field(x => x.Start).Description("The starttime of the company experience.");
             Field(x => x.End).Description("The endtime of the company experience.");

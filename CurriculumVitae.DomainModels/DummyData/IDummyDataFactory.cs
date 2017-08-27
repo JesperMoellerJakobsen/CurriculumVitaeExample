@@ -8,9 +8,9 @@ namespace CurriculumVitae.DomainModels.DummyData
     public interface IDummyDataFactory
     {
         User MakeUser();
-        List<Education> MakeEducations(Guid userId);
-        List<Project> MakeProjects(Guid userId);
-        List<Skill> MakeSkills(Guid userId);
-        List<WorkExperience> MakeWorkExperiences(Guid userId);
+        List<Education> MakeEducations();
+        List<Project> MakeProjects();
+        List<Skill> MakeSkills();
+        List<Company> MakeCompanies();
     }
 }

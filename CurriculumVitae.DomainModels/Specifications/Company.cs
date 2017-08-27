@@ -2,9 +2,8 @@
 
 namespace CurriculumVitae.DomainModels.Specifications
 {
-    public class WorkExperience 
+    public class Company 
     {
-        public Guid BelongsTo { get; set; }
         public string CompanyName { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }

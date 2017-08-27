@@ -7,7 +7,6 @@ namespace CurriculumVitae.GraphModels.Specifications
     {
         public EducationGraphType()
         {
-            Field(x => x.BelongsTo, type: typeof(IdGraphType)).Description("The user which the education belongs to.");
             Field(x => x.Start).Description("Start time of the education.");
             Field(x => x.End).Description("End time of the education.");
             Field(x => x.Description).Description("A description of the education.");

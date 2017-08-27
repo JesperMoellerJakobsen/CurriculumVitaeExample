@@ -1,12 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using CurriculumVitae.Database;
+﻿using System.Threading.Tasks;
 using CurriculumVitae.WebApi.GraphQL;
 using GraphQL;
 using GraphQL.Types;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace CurriculumVitae.WebApi.Controllers
 {
@@ -22,27 +19,17 @@ namespace CurriculumVitae.WebApi.Controllers
             this.curriculumVitaeGraphQuery = curriculumVitaeGraphQuery;
             this.logger = logger;
         }
-
-
+        
         [HttpPost]
         public async Task<IActionResult> PostQuery([FromBody] GraphQuery queryFromFrontend)
         {
             var schema = new Schema { Query = curriculumVitaeGraphQuery };
-
-            var result = await new DocumentExecuter().ExecuteAsync(x =>
-            {
-                x.Schema = schema;
-                x.Query = queryFromFrontend.Query;
-
-            }).ConfigureAwait(false);
+            var result = await new DocumentExecuter().ExecuteAsync(new ExecutionOptions { Schema = schema, Query = queryFromFrontend.Query }).ConfigureAwait(false);
 
             if (result.Errors?.Count > 0)
-            {
-                //Error handling sucks a bit. Log it to log container instead :-)
-                return BadRequest();
-            }
-
-            return Ok(result);
+                logger.LogError($"{result.Errors}");
+            
+            return Json(result);
         }
     }
 }

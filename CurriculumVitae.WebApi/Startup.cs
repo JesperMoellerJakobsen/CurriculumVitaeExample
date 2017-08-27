@@ -2,11 +2,13 @@
 using CurriculumVitae.Database;
 using CurriculumVitae.DomainModels.DummyData;
 using CurriculumVitae.WebApi.GraphQL;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace CurriculumVitae.WebApi
 {
@@ -36,9 +38,9 @@ namespace CurriculumVitae.WebApi
         /// <param name="builder"></param>
         public void ConfigureContainer(ContainerBuilder builder)
         {
+            builder.RegisterType<CurriculumVitaeDatabaseContext>().As<ICurriculumVitaeDatabaseContext>();
             builder.RegisterType<CurriculumVitaeGraphQuery>().As<CurriculumVitaeGraphQuery>();
-            builder.RegisterType<DummyDataFactory>().As<IDummyDataFactory>();
-            builder.RegisterType<CurriculumVitaeDatabaseContext>().As<CurriculumVitaeDatabaseContext>();
+            builder.RegisterType<DummyDataFactory>().As<IDummyDataFactory>();           
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -46,6 +48,8 @@ namespace CurriculumVitae.WebApi
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }

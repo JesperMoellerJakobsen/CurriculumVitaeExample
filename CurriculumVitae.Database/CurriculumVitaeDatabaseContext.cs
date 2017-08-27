@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CurriculumVitae.Database
 {
-    public class CurriculumVitaeDatabaseContext : DbContext
+    public class CurriculumVitaeDatabaseContext : DbContext, ICurriculumVitaeDatabaseContext
     {
         private readonly IDummyDataFactory dummyDataFactory;
 
@@ -27,10 +27,10 @@ namespace CurriculumVitae.Database
             return new DetailedUser
             {
                 User = user,
-                Educations = Educations(user.Id),
-                Skills = Skills(user.Id),
-                Projects = Projects(user.Id),
-                WorkExperiences = WorkExperiences(user.Id)
+                Educations = Educations(),
+                Skills = Skills(),
+                Projects = Projects(),
+                Companies = Companies()
             };
         }
 
@@ -39,24 +39,24 @@ namespace CurriculumVitae.Database
             return dummyDataFactory.MakeUser();
         }
 
-        public List<Education> Educations(Guid userId)
+        public List<Education> Educations()
         {
-            return dummyDataFactory.MakeEducations(userId);
+            return dummyDataFactory.MakeEducations();
         }
 
-        public List<Project> Projects(Guid userId)
+        public List<Project> Projects()
         {
-            return dummyDataFactory.MakeProjects(userId);
+            return dummyDataFactory.MakeProjects();
         }
 
-        public List<Skill> Skills(Guid userId)
+        public List<Skill> Skills()
         {
-            return dummyDataFactory.MakeSkills(userId);
+            return dummyDataFactory.MakeSkills();
         }
 
-        public List<WorkExperience> WorkExperiences(Guid userId)
+        public List<Company> Companies()
         {
-            return dummyDataFactory.MakeWorkExperiences(userId);
+            return dummyDataFactory.MakeCompanies();
         }
     }
 }
