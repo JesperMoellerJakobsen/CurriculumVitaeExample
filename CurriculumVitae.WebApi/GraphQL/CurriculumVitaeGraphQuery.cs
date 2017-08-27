@@ -20,25 +20,25 @@ namespace CurriculumVitae.WebApi.GraphQL
                 resolve: context => dbContext.User()
             );
 
-            Field<EducationGraphType>(
+            Field<ListGraphType<EducationGraphType>>(
                 "education",
                 arguments: new QueryArguments(new QueryArgument<IdGraphType> { Name = "Id", Description = "Id of the user queried" }),
                 resolve: context => dbContext.Educations()
             );
 
-            Field<ProjectGraphType>(
+            Field<ListGraphType<ProjectGraphType>>(
                 "project",
                 arguments: new QueryArguments(new QueryArgument<IdGraphType> { Name = "Id", Description = "Id of the user queried" }),
                 resolve: context => dbContext.Projects()
             );
 
-            Field<SkillGraphType>(
+            Field<ListGraphType<SkillGraphType>>(
                 "skill",
                 arguments: new QueryArguments(new QueryArgument<IdGraphType> { Name = "Id", Description = "Id of the user queried" }),
                 resolve: context => dbContext.Skills()
             );
 
-            Field<CompanyGraphType>(
+            Field<ListGraphType<CompanyGraphType>>(
                 "company",
                 arguments: new QueryArguments(new QueryArgument<IdGraphType> { Name = "Id", Description = "Id of the user queried" }),
                 resolve: context => dbContext.Companies()

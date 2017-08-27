@@ -14,7 +14,7 @@ namespace CurriculumVitae.DomainModels.DummyData
 
         public List<Education> MakeEducations()
         {
-            return new List<Education> { new Education { Start = new DateTime(2012), End = new DateTime(2016), Description = "Bachelor of Engineering, Information and Communication Technology. Specialization in Enterprise Engineering" } };
+            return new List<Education> { new Education { Start = new DateTime(2012, 1, 1), End = new DateTime(2016, 1, 1), Description = "Bachelor of Engineering, Information and Communication Technology. Specialization in Enterprise Engineering" } };
         }
 
         public List<Project> MakeProjects()
