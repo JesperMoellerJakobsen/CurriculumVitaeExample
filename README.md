@@ -6,7 +6,7 @@ Mentionable technologies in use:
 * ASP.NET Core web api using MVC6
 * As much IoC as possible
 * Autofac dependency injection
-* Mvc.Versioning for api versioning. (Takes around 5 seconds to set up)
+* Mvc.Versioning for api versioning
 
 Also included: 
 * A prebundled GraphiQl client frontend (Found on https://github.com/graphql-dotnet/graphql-dotnet)
